@@ -22,8 +22,7 @@
           <p>“Hi {{ displayName }}”</p>
         </blockquote>
         <figcaption class="mt-10 mx-2 my-2">
-          <div class="font-semibold text-gray-900"><p>User ID:</p></div>
-          <div class="text-gray-600">{{ userId }}</div>
+          <div class="text-gray-600">ID{{ userId }}</div>
 
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
@@ -48,7 +47,12 @@
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
           >
-            <p>Access Token: {{ accessToken }}</p>
+            <p>Access Token:</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>{{ accessToken }}</p>
           </div>
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
