@@ -9,9 +9,8 @@
       class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"
     />
     <div class="mx-auto max-w-2xl lg:max-w-4xl">
-      <img />
       <img
-        class="mx-auto h-10 w-10 rounded-full"
+        class="mx-auto h-64 w-64 rounded-full"
         :src="pictureUrl"
         alt="User's picture"
         v-if="pictureUrl"
@@ -41,11 +40,33 @@
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
           >
-            Status Message: {{ statusMessage }}
+            <p>Status Message: {{ statusMessage }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
             <p>OS: {{ os }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
             <p>Language: {{ language }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            Status Message: {{ statusMessage }}
+
             <p>Version: {{ version }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
             <p>Access Token: {{ accessToken }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
             <p>Is In Client: {{ isInClient }}</p>
           </div>
         </figcaption>
@@ -58,8 +79,8 @@
     <!-- ... (Rest of your existing template) -->
   </div>
   <div>
-    <p-card title="Profile Details" :style="{ width: '300px', margin: 'auto' }">
-      <template #title>
+    <!-- <p-card title="Profile Details" :style="{ width: '300px', margin: 'auto' }"> -->
+    <!-- <template #title>
         <img
           :src="pictureUrl"
           alt="User's picture"
@@ -67,18 +88,18 @@
           class="p-mb-2"
         />
         <div class="p-text-center">{{ displayName }}</div>
-      </template>
-      <template #content>
+      </template> -->
+    <!-- <template #content>
         <p>Display Name: {{ displayName }}</p>
 
         <p></p>
         <p>Status Message: {{ statusMessage }}</p>
-      </template>
-    </p-card>
+      </template> -->
+    <!-- </p-card> -->
     <img :src="pictureUrl" alt="User's picture" v-if="pictureUrl" />
-    <InputNumber v-model="value1" inputId="integeronly" />
+    <!-- <InputNumber v-model="value1" inputId="integeronly" /> -->
 
-    <p-button label="Click Me"></p-button>
+    <!-- <p-button label="Click Me"></p-button> -->
 
     <!-- Display user details -->
     <!-- <p></p>
@@ -144,10 +165,8 @@ import liff from "@line/liff";
 import "primevue/resources/themes/saga-blue/theme.css"; // theme
 import "primevue/resources/primevue.min.css"; // core css
 import "primeicons/primeicons.css"; // icons
-const pButton = Button;
 
 // Import PrimeVue button component
-import Button from "primevue/button";
 
 // Define the button component
 
