@@ -1,10 +1,19 @@
 <template>
+  <div></div>
   <div>
+    <img src="pictureUrl" />
+
+    <!-- <h1>About Us</h1> -->
+    <p>Hi {{ displayName }}</p>
+    <p>Display Name: {{ displayName }}</p>
+    <p>User ID: {{ userId }}</p>
+    <p>Status Message: {{ statusMessage }}</p>
+    <!-- 
     <p>OS: {{ os }}</p>
     <p>Language: {{ language }}</p>
     <p>Version: {{ version }}</p>
     <p>Access Token: {{ accessToken }}</p>
-    <p>Is In Client: {{ isInClient }}</p>
+    <p>Is In Client: {{ isInClient }}</p> -->
     <!-- 
     <button id="btnLogout" v-if="!isInClient">Logout</button>
     <button id="btnMsg" v-if="isInClient">Message</button>
