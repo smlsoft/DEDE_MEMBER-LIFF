@@ -1,7 +1,7 @@
 <template>
   <div></div>
   <div>
-    <img src="pictureUrl" />
+    <img :src="pictureUrl" alt="User's picture" v-if="pictureUrl" />
 
     <!-- <h1>About Us</h1> -->
     <p>Hi {{ displayName }}</p>
@@ -20,7 +20,7 @@
     <button id="btnScanCode" v-if="isInClient">Scan Code</button>
     <button id="BtnClose" v-if="isInClient">Close</button> -->
   </div>
-  <div v-if="profile">
+  <!-- <div v-if="profile">
     <p>Display Name: {{ displayName }}</p>
     <p>
       Picture URL:
@@ -28,7 +28,7 @@
     </p>
     <p>User ID: {{ userId }}</p>
     <p>Status Message: {{ statusMessage }}</p>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
