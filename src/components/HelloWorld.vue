@@ -25,7 +25,7 @@
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
           >
-            <div class="font-semibold text-gray-900">User ID</div>
+            <div class="font-semibold text-gray-900"><p>User ID</p></div>
             <svg
               viewBox="0 0 2 2"
               width="3"
