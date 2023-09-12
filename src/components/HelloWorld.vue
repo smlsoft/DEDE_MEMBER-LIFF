@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8"
+    class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 ml-4 mr-4"
   >
     <div
       class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"
@@ -21,22 +21,10 @@
         >
           <p>“Hi {{ displayName }}”</p>
         </blockquote>
-        <figcaption class="mt-10">
-          <div
-            class="mt-4 flex items-center justify-center space-x-3 text-base"
-          >
-            <div class="font-semibold text-gray-900"><p>User ID</p></div>
-            <svg
-              viewBox="0 0 2 2"
-              width="3"
-              height="3"
-              aria-hidden="true"
-              class="fill-gray-900"
-            >
-              <circle cx="1" cy="1" r="1" />
-            </svg>
-            <div class="text-gray-600">{{ userId }}</div>
-          </div>
+        <figcaption class="mt-10 mx-2 my-2">
+          <div class="font-semibold text-gray-900"><p>User ID:</p></div>
+          <div class="text-gray-600">{{ userId }}</div>
+
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
           >
@@ -55,8 +43,6 @@
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
           >
-            Status Message: {{ statusMessage }}
-
             <p>Version: {{ version }}</p>
           </div>
           <div
@@ -96,7 +82,6 @@
         <p>Status Message: {{ statusMessage }}</p>
       </template> -->
     <!-- </p-card> -->
-    <img :src="pictureUrl" alt="User's picture" v-if="pictureUrl" />
     <!-- <InputNumber v-model="value1" inputId="integeronly" /> -->
 
     <!-- <p-button label="Click Me"></p-button> -->
