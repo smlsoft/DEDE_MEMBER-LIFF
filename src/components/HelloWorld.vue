@@ -227,7 +227,7 @@ async function getUserprofile() {
       userId.value = profile.value.userId;
       statusMessage.value = profile.value.statusMessage;
       displayName.value = profile.value.displayName;
-      decodeIDToken.value = profile.value.decodeIDToken;
+      decodeIDToken.value = liff.getDecodedIDToken().email;
     }
   } catch (error) {
     console.error("Error getting user profile:", error);
