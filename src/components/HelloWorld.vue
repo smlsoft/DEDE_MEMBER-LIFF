@@ -27,6 +27,11 @@
           <div
             class="mt-4 flex items-center justify-center space-x-3 text-base"
           >
+            <p>Email: {{ decodeIDToken }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
             <p>Status Message: {{ statusMessage }}</p>
           </div>
           <div
@@ -58,6 +63,31 @@
             class="mt-4 flex items-center justify-center space-x-3 text-base"
           >
             <p>Is In Client: {{ isInClient }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>type: {{ type }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>viewType: {{ viewType }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>utouId: {{ utouId }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>roomId: {{ roomId }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>groupId: {{ groupId }}</p>
           </div>
         </figcaption>
       </figure>
@@ -169,12 +199,19 @@ const pictureUrl = ref("");
 const userId = ref("");
 const statusMessage = ref("");
 const displayName = ref("");
+const decodeIDToken = ref("");
+const type = ref("");
+const viewType = ref("");
+const utouId = ref("");
+const roomId = ref("");
+const groupId = ref("");
 
 onMounted(async () => {
   try {
     await liff.init({ liffId: "2000714922-XOb4DG4e" });
     getUserprofile();
     getEnvironment();
+    getContext();
   } catch (error) {
     console.error("Error initializing LIFF:", error);
   }
@@ -190,10 +227,19 @@ async function getUserprofile() {
       userId.value = profile.value.userId;
       statusMessage.value = profile.value.statusMessage;
       displayName.value = profile.value.displayName;
+      decodeIDToken.value = profile.value.decodeIDToken;
     }
   } catch (error) {
     console.error("Error getting user profile:", error);
   }
+}
+
+function getContext() {
+  type.value = liff.getContext().type;
+  viewType.value = liff.getContext().viewType;
+  utouId.value = liff.getContext().utouId;
+  roomId.value = liff.getContext().roomId;
+  groupId.value = liff.getContext().groupId;
 }
 
 function getEnvironment() {
