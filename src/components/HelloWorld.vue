@@ -251,17 +251,20 @@ async function getUserprofile() {
     console.error("Error getting user profile:", error);
   }
 }
-
 async function sendMsg() {
-  if (liff.getContext().type !== "none") {
-    await liff.sendMessages([
-      {
-        type: "sticker",
-        tickerId: 1,
-        packageId: 1,
-      },
-    ]);
-    alert("hi");
+  try {
+    if (liff.getContext().type !== "none") {
+      await liff.sendMessages([
+        {
+          type: "sticker",
+          stickerId: "1",
+          packageId: "1",
+        },
+      ]);
+      console.log("Message sent successfully!");
+    }
+  } catch (error) {
+    console.error("Error in sending message", error);
   }
 }
 
