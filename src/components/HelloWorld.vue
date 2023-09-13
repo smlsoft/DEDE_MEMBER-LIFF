@@ -257,8 +257,8 @@ async function sendMsg() {
       await liff.sendMessages([
         {
           type: "sticker",
-          stickerId: "1",
-          packageId: "1",
+          stickerId: "10856",
+          packageId: "789",
         },
       ]);
       console.log("Message sent successfully!");
