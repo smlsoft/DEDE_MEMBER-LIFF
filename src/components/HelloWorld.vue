@@ -9,7 +9,7 @@
             <div>
               <img
                 class="inline-block h-9 w-9 rounded-full"
-                src="pictureUrl"
+                :src="pictureUrl"
                 v-if="pictureUrl"
                 alt=""
               />
