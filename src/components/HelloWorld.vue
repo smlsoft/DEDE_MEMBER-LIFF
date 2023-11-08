@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-orange-500">
+  <section
+    class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 ml-4 mr-4"
+  >
     <div
-      class="rounded-lg bg-gray-50 shadow-sm ring-1 pt-2 ring-gray-900/5 mx-2 my-auto"
+      class="rounded-lg bg-gray-50 shadow-sm ring-1 pt-2 ring-gray-900/5 mx-4 my-12"
     >
       <dl class="flex flex-wrap">
         <div class="flex-auto pl-6 pt-6">
@@ -66,14 +68,13 @@
         >
       </div>
     </div>
-    <section class="px-6 py-96 sm:py-32 lg:px-8">
-      <!-- <div
+    <div
       class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"
     />
-     <div
-      class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"
-         />
-      <div class="mx-auto max-w-2xl lg:max-w-4xl">
+    <div
+      class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-orange-500 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"
+    />
+    <!-- <div class="mx-auto max-w-2xl lg:max-w-4xl">
       <img
         class="mx-auto h-64 w-64 rounded-full"
         :src="pictureUrl"
@@ -175,9 +176,40 @@
         </figcaption>
       </figure>
     </div> -->
-    </section>
-  </div>
+  </section>
+  <div>
+    <!-- Profile Card -->
 
+    <!-- ... (Rest of your existing template) -->
+  </div>
+  <div>
+    <!-- <p-card title="Profile Details" :style="{ width: '300px', margin: 'auto' }"> -->
+    <!-- <template #title>
+        <img
+          :src="pictureUrl"
+          alt="User's picture"
+          v-if="pictureUrl"
+          class="p-mb-2"
+        />
+        <div class="p-text-center">{{ displayName }}</div>
+      </template> -->
+    <!-- <template #content>
+        <p>Display Name: {{ displayName }}</p>
+
+        <p></p>
+        <p>Status Message: {{ statusMessage }}</p>
+      </template> -->
+    <!-- </p-card> -->
+    <!-- <InputNumber v-model="value1" inputId="integeronly" /> -->
+
+    <!-- <p-button label="Click Me"></p-button> -->
+
+    <!-- Display user details -->
+    <!-- <p></p>
+    <p>Display Name: {{ displayName }}</p>
+    <p>User ID: {{ userId }}</p>
+    <p></p> -->
+  </div>
   <!-- <div class="surface-ground text-center px-0 sm:px-4 py-8 md:px-6 lg:px-8">
     <Carousel :value="company">
       <template #item="slotProps">
