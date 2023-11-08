@@ -10,8 +10,8 @@
               <img
                 class="inline-block h-9 w-9 rounded-full"
                 :src="pictureUrl"
+                alt="User's picture"
                 v-if="pictureUrl"
-                alt=""
               />
             </div>
             <div class="ml-3">
