@@ -3,7 +3,7 @@
     class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 ml-4 mr-4"
   >
     <div
-      class="rounded-lg bg-gray-50 shadow-sm ring-1 pt-2 ring-gray-900/5 mx-4 my-12"
+      class="rounded-lg bg-gray-50 shadow-2xl ring-1 pt-2 ring-gray-900/5 mx-4 my-12"
     >
       <dl class="flex flex-wrap">
         <div class="flex-auto pl-6 pt-6">
@@ -55,16 +55,20 @@
           </dd>
         </div>
         <div class="mt-4 flex w-full flex-none gap-x-4 px-6">
-          <dt class="flex-none">
-            <span class="sr-only">Status</span>
-            <CreditCardIcon class="h-6 w-5 text-gray-400" aria-hidden="true" />
-          </dt>
-          <dd class="text-sm leading-6 text-gray-500">Paid with MasterCard</dd>
+          <dd class="text-sm leading-6 text-gray-500">
+            <p>roomId: {{ roomId }}</p>
+            groupId: {{ groupId }}
+          </dd>
+        </div>
+        <div class="mt-4 flex w-full flex-none gap-x-4 px-6">
+          <dd class="text-sm leading-6 text-gray-500">
+            groupId: {{ groupId }}
+          </dd>
         </div>
       </dl>
       <div class="mt-6 border-t border-gray-900/5 px-6 py-6">
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-          >register DEDE <span aria-hidden="true">&rarr;</span></a
+          >Register DEDE <span aria-hidden="true">&rarr;</span></a
         >
       </div>
     </div>
