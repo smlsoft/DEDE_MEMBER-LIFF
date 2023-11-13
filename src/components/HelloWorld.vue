@@ -291,13 +291,17 @@ const roomId = ref("");
 const groupId = ref("");
 
 onMounted(async () => {
-  try {
-    await liff.init({ liffId: "2000714922-XOb4DG4e" });
-    getUserprofile();
-    getEnvironment();
-    getContext();
-  } catch (error) {
-    console.error("Error initializing LIFF:", error);
+  if (liff.isLoggedIn()) {
+    try {
+      await liff.init({ liffId: "2000714922-XOb4DG4e" });
+      getUserprofile();
+      getEnvironment();
+      getContext();
+    } catch (error) {
+      console.error("Error initializing LIFF:", error);
+    }
+  } else {
+    liff.login();
   }
 });
 
@@ -354,15 +358,3 @@ function getEnvironment() {
 <style>
 /* Add any style you want here */
 </style>
-<!-- if (liff.isLoggedIn()) {
-  try {
-    await liff.init({ liffId: "2000714922-XOb4DG4e" });
-    getUserprofile();
-    getEnvironment();
-    getContext();
-  } catch (error) {
-    console.error("Error initializing LIFF:", error);
-  }
-} else {
-  liff.login();
-} -->
