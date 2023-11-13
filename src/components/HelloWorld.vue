@@ -174,10 +174,11 @@ function runapp() {
     .getProfile()
     .then((profile) => {
       console.log(profile);
-      displayName.value = profile.displayName;
-      pictureUrl.value = profile.pictureUrl;
-      statusMessage.value = profile.statusMessage;
-      userId.value = profile.userId;
+      pictureUrl.value = profile.value.pictureUrl;
+      userId.value = profile.value.userId;
+      statusMessage.value = profile.value.statusMessage;
+      displayName.value = profile.value.displayName;
+      decodeIDToken.value = liff.getDecodedIDToken().email;
     })
     .catch((err) => console.error(err));
 }
