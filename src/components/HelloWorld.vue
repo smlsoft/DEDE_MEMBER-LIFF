@@ -9,11 +9,7 @@
         <div class="flex-auto pl-6 pt-6">
           <div class="flex items-center justify-center">
             <div>
-              <img
-                class="h-9 w-9 rounded-full"
-                src="assets\icon.png"
-                alt="User's picture"
-              />
+              <img class="h-9 w-9 rounded-full" src="" alt="User's picture" />
             </div>
           </div>
 
@@ -107,27 +103,25 @@ const pictureUrl = ref("");
 const userId = ref("");
 const statusMessage = ref("");
 const displayName = ref("");
-
 const decodeIDToken = ref("");
 const type = ref("");
 const viewType = ref("");
 const utouId = ref("");
 const roomId = ref("");
-const idToken = ref("");
-const setIdToken = ref("");
 const groupId = ref("");
 
 onMounted(async () => {
-  try {
-    await liff.init({ liffId: "2000714922-XOb4DG4e" }, () => {
-      if (liff.isLoggedIn()) {
-        runapp();
-      } else {
-        liff.login();
-      }
-    });
-  } catch (error) {
-    console.error("Error initializing LIFF:", error);
+  if (liff.isLoggedIn()) {
+    try {
+      await liff.init({ liffId: "2000714922-XOb4DG4e" });
+      getUserprofile();
+      getEnvironment();
+      getContext();
+    } catch (error) {
+      console.error("Error initializing LIFF:", error);
+    }
+  } else {
+    liff.login();
   }
 });
 
@@ -163,25 +157,7 @@ async function getUserprofile() {
 //     console.error("Error in sending message", error);
 //   }
 // }
-function runapp() {
-  idToken.value = liff.getIDToken();
-  // Assuming setIdToken is a method to update idToken state
-  setIdToken(idToken);
-  getUserprofile();
-  getEnvironment();
-  getContext();
-  liff
-    .getProfile()
-    .then((profile) => {
-      console.log(profile);
-      pictureUrl.value = profile.value.pictureUrl;
-      userId.value = profile.value.userId;
-      statusMessage.value = profile.value.statusMessage;
-      displayName.value = profile.value.displayName;
-      decodeIDToken.value = liff.getDecodedIDToken().email;
-    })
-    .catch((err) => console.error(err));
-}
+
 function getContext() {
   type.value = liff.getContext().type;
   viewType.value = liff.getContext().viewType;
