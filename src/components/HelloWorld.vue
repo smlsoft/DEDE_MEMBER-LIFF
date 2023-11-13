@@ -74,6 +74,7 @@
     <div
       class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-orange-500 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"
     />
+    <button @click="logout()">Logout</button>
     <!-- <div class="mx-auto max-w-2xl lg:max-w-4xl">
       <img
         class="mx-auto h-64 w-64 rounded-full"
@@ -273,88 +274,139 @@ import "primeicons/primeicons.css"; // icons
 
 // Define the button component
 
-const os = ref("");
-const language = ref("");
-const version = ref("");
-const accessToken = ref("");
-const isInClient = ref(false);
-const profile = ref("");
 const pictureUrl = ref("");
 const userId = ref("");
 const statusMessage = ref("");
 const displayName = ref("");
-const decodeIDToken = ref("");
-const type = ref("");
-const viewType = ref("");
-const utouId = ref("");
+const idToken = ref("");
+
 const roomId = ref("");
 const groupId = ref("");
 
-onMounted(async () => {
-  if (liff.isLoggedIn()) {
-    try {
-      await liff.init({ liffId: "2000714922-XOb4DG4e" });
-      getUserprofile();
-      getEnvironment();
-      getContext();
-    } catch (error) {
-      console.error("Error initializing LIFF:", error);
-    }
-  } else {
-    liff.login();
-  }
-});
+// onMounted(async () => {
+//   liff.init(
+//     { liffId: "2000714922-XOb4DG4e" },
+//     async () => {
+//       if (liff.isLoggedIn()) {
+//         getUserprofile();
+//         getEnvironment();
+//         getContext();
+//       } else {
+//         liff.login();
+//       }
+//     },
+//     (err) => console.error(err)
+//   );
+// });
 
-async function getUserprofile() {
-  try {
-    profile.value = await liff.getProfile();
-    console.log(profile.value);
-
-    if (profile.value) {
-      pictureUrl.value = profile.value.pictureUrl;
-      userId.value = profile.value.userId;
-      statusMessage.value = profile.value.statusMessage;
-      displayName.value = profile.value.displayName;
-      decodeIDToken.value = liff.getDecodedIDToken().email;
-    }
-  } catch (error) {
-    console.error("Error getting user profile:", error);
-  }
-}
-// async function sendMsg() {
+// async function getUserprofile() {
 //   try {
-//     if (liff.getContext().type !== "none") {
-//       await liff.sendMessages([
-//         {
-//           type: "sticker",
-//           stickerId: "11",
-//           packageId: "1",
-//         },
-//       ]);
-//       console.log("Message sent successfully!");
+//     profile.value = await liff.getProfile();
+//     console.log(profile.value);
+
+//     if (profile.value) {
+//       pictureUrl.value = profile.value.pictureUrl;
+//       userId.value = profile.value.userId;
+//       statusMessage.value = profile.value.statusMessage;
+//       displayName.value = profile.value.displayName;
+//       decodeIDToken.value = liff.getDecodedIDToken().email;
 //     }
 //   } catch (error) {
-//     console.error("Error in sending message", error);
+//     console.error("Error getting user profile:", error);
 //   }
 // }
+// // async function sendMsg() {
+// //   try {
+// //     if (liff.getContext().type !== "none") {
+// //       await liff.sendMessages([
+// //         {
+// //           type: "sticker",
+// //           stickerId: "11",
+// //           packageId: "1",
+// //         },
+// //       ]);
+// //       console.log("Message sent successfully!");
+// //     }
+// //   } catch (error) {
+// //     console.error("Error in sending message", error);
+// //   }
+// // }
 
-function getContext() {
-  type.value = liff.getContext().type;
-  viewType.value = liff.getContext().viewType;
-  utouId.value = liff.getContext().utouId;
-  roomId.value = liff.getContext().roomId;
-  groupId.value = liff.getContext().groupId;
+// function getContext() {
+//   type.value = liff.getContext().type;
+//   viewType.value = liff.getContext().viewType;
+//   utouId.value = liff.getContext().utouId;
+//   roomId.value = liff.getContext().roomId;
+//   groupId.value = liff.getContext().groupId;
+// }
+
+// function getEnvironment() {
+//   os.value = liff.getOS();
+//   language.value = liff.getLanguage();
+//   version.value = liff.getVersion();
+//   accessToken.value = liff.getAccessToken();
+//   isInClient.value = liff.isInClient();
+// }
+function logout() {
+  liff.logout();
+  window.location.reload();
 }
 
-function getEnvironment() {
-  os.value = liff.getOS();
-  language.value = liff.getLanguage();
-  version.value = liff.getVersion();
-  accessToken.value = liff.getAccessToken();
-  isInClient.value = liff.isInClient();
+function initLine() {
+  liff.init(
+    { liffId: "2000714922-XOb4DG4e" },
+    () => {
+      if (liff.isLoggedIn()) {
+        runApp();
+      } else {
+        liff.login();
+      }
+    },
+    (err) => console.error(err)
+  );
 }
+
+function runApp() {
+  idToken.value = liff.getIDToken();
+  liff
+    .getProfile()
+    .then((profile) => {
+      console.log(profile);
+      displayName.value = profile.displayName;
+      pictureUrl.value = profile.pictureUrl;
+      statusMessage.value = profile.statusMessage;
+      userId.value = profile.userId;
+    })
+    .catch((err) => console.error(err));
+}
+
+onMounted(() => {
+  initLine();
+});
 </script>
 
 <style>
 /* Add any style you want here */
 </style>
+<!-- if (liff.isLoggedIn()) {
+  try {
+    await liff.init({ liffId: "2000714922-XOb4DG4e" });
+    getUserprofile();
+    getEnvironment();
+    getContext();
+  } catch (error) {
+    console.error("Error initializing LIFF:", error);
+  }
+} else {
+  liff.login();
+} -->
+<!-- const os = ref("");
+const language = ref("");
+const version = ref("");
+const accessToken = ref("");
+const isInClient = ref(false);
+const profile = ref("");
+const decodeIDToken = ref("");
+const type = ref("");
+const viewType = ref("");
+const utouId = ref(""); -->
