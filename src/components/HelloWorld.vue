@@ -41,7 +41,7 @@
               <p
                 class="text-sm font-medium text-gray-700 group-hover:text-gray-900"
               >
-                {{ displayName }} Scrambernont
+                {{ displayName }}
               </p>
             </div>
           </div>
@@ -122,9 +122,6 @@ onMounted(async () => {
     await liff.init({ liffId: "2000714922-XOb4DG4e" }, () => {
       if (liff.isLoggedIn()) {
         runapp();
-        getUserprofile();
-        getEnvironment();
-        getContext();
       } else {
         liff.login();
       }
@@ -170,7 +167,9 @@ function runapp() {
   idToken.value = liff.getIDToken();
   // Assuming setIdToken is a method to update idToken state
   setIdToken(idToken);
-
+  getUserprofile();
+  getEnvironment();
+  getContext();
   liff
     .getProfile()
     .then((profile) => {
