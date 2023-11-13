@@ -37,7 +37,7 @@
               <p
                 class="text-sm font-medium text-gray-700 group-hover:text-gray-900"
               >
-                {{ displayName }}
+                {{ displayName }} Scrambernont
               </p>
             </div>
           </div>
@@ -74,12 +74,192 @@
     <div
       class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-orange-500 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"
     />
+    <!-- <div class="mx-auto max-w-2xl lg:max-w-4xl">
+      <img
+        class="mx-auto h-64 w-64 rounded-full"
+        :src="pictureUrl"
+        alt="User's picture"
+        v-if="pictureUrl"
+      />
+
+      <figure class="mt-10">
+        <blockquote
+          class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9"
+        >
+          <p>“Hi {{ displayName }}”</p>
+        </blockquote>
+        <figcaption class="mt-10 mx-2 my-2">
+          <div class="text-gray-600">ID{{ userId }}</div>
+
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>Email: {{ decodeIDToken }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>Status Message: {{ statusMessage }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>OS: {{ os }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>Language: {{ language }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>Version: {{ version }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>Access Token:</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>{{ accessToken }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>Is In Client: {{ isInClient }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>type: {{ type }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>viewType: {{ viewType }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>utouId: {{ utouId }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>roomId: {{ roomId }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <p>groupId: {{ groupId }}</p>
+          </div>
+          <div
+            class="mt-4 flex items-center justify-center space-x-3 text-base"
+          >
+            <button
+              class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+              @click="sendMsg()"
+            >
+              <svg
+                class="fill-current w-4 h-4 mr-2"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+              </svg>
+              <span>send</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+    </div> -->
   </section>
   <div>
     <!-- Profile Card -->
 
     <!-- ... (Rest of your existing template) -->
   </div>
+  <div>
+    <!-- <p-card title="Profile Details" :style="{ width: '300px', margin: 'auto' }"> -->
+    <!-- <template #title>
+        <img
+          :src="pictureUrl"
+          alt="User's picture"
+          v-if="pictureUrl"
+          class="p-mb-2"
+        />
+        <div class="p-text-center">{{ displayName }}</div>
+      </template> -->
+    <!-- <template #content>
+        <p>Display Name: {{ displayName }}</p>
+
+        <p></p>
+        <p>Status Message: {{ statusMessage }}</p>
+      </template> -->
+    <!-- </p-card> -->
+    <!-- <InputNumber v-model="value1" inputId="integeronly" /> -->
+
+    <!-- <p-button label="Click Me"></p-button> -->
+
+    <!-- Display user details -->
+    <!-- <p></p>
+    <p>Display Name: {{ displayName }}</p>
+    <p>User ID: {{ userId }}</p>
+    <p></p> -->
+  </div>
+  <!-- <div class="surface-ground text-center px-0 sm:px-4 py-8 md:px-6 lg:px-8">
+    <Carousel :value="company">
+      <template #item="slotProps">
+        <div class="flex justify-content-center">
+          <div
+            class="surface-card shadow-2 px-2 md:px-6 py-5 border-round mb-4 text-900 text-2xl line-highlight-3"
+            style="max-width: 600px"
+          >
+            {{ slotProps.data.text }}
+          </div>
+        </div>
+
+        <img
+          :src="
+            'images/blocks/testimonial/testimonials-' +
+            slotProps.data.image +
+            '.png'
+          "
+          width="56"
+          height="56"
+          :alt="slotProps.data.name"
+          class="mb-3"
+        />
+        <div class="text-900 font-bold line-height-3">
+          {{ slotProps.data.name }}
+        </div>
+        <div class="text-600 line-height-3 mb-4">Company Title</div>
+      </template>
+    </Carousel>
+  </div> -->
+  <!-- 
+    <p>OS: {{ os }}</p>
+    <p>Language: {{ language }}</p>
+    <p>Version: {{ version }}</p>
+    <p>Access Token: {{ accessToken }}</p>
+    <p>Is In Client: {{ isInClient }}</p> -->
+  <!-- 
+    <button id="btnLogout" v-if="!isInClient">Logout</button>
+    <button id="btnMsg" v-if="isInClient">Message</button>
+    <button id="btnScanCode" v-if="isInClient">Scan Code</button>
+    <button id="BtnClose" v-if="isInClient">Close</button> -->
+  <!-- <div v-if="profile">
+    <p>Display Name: {{ displayName }}</p>
+    <p>
+      Picture URL:
+      <img :src="pictureUrl" alt="User's picture" v-if="pictureUrl" />
+    </p>
+    <p>User ID: {{ userId }}</p>
+    <p>Status Message: {{ statusMessage }}</p>
+  </div> -->
 </template>
 
 <script setup>
@@ -111,17 +291,13 @@ const roomId = ref("");
 const groupId = ref("");
 
 onMounted(async () => {
-  if (liff.isLoggedIn()) {
-    try {
-      await liff.init({ liffId: "2000714922-XOb4DG4e" });
-      getUserprofile();
-      getEnvironment();
-      getContext();
-    } catch (error) {
-      console.error("Error initializing LIFF:", error);
-    }
-  } else {
-    liff.login();
+  try {
+    await liff.init({ liffId: "2000714922-XOb4DG4e" });
+    getUserprofile();
+    getEnvironment();
+    getContext();
+  } catch (error) {
+    console.error("Error initializing LIFF:", error);
   }
 });
 
@@ -178,3 +354,15 @@ function getEnvironment() {
 <style>
 /* Add any style you want here */
 </style>
+<!-- if (liff.isLoggedIn()) {
+  try {
+    await liff.init({ liffId: "2000714922-XOb4DG4e" });
+    getUserprofile();
+    getEnvironment();
+    getContext();
+  } catch (error) {
+    console.error("Error initializing LIFF:", error);
+  }
+} else {
+  liff.login();
+} -->
