@@ -358,7 +358,7 @@ function logout() {
 
 function initLine() {
   liff.init(
-    { liffId: "2000714922-XOb4DG4e" },
+    { liffId: "2001677131-XKqMJqML" },
     () => {
       if (liff.isLoggedIn()) {
         runApp();
