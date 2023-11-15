@@ -20,7 +20,7 @@
           <dd
             class="mt-6 text-base font-semibold leading-6 text-gray-900 py-auto"
           >
-            Welcome to DEDE member
+            Welcome to DEDE member222
             <!-- Have a good day
             {{ displayName }} Scrambernont ! -->
           </dd>
