@@ -16,7 +16,7 @@ git push
 git checkout ไปยัง gh-pages
 git checkout gh-pages
 git merge master มา
-git merge master
+git merge main
 comment /dist ใน .gitignore อีกครั้ง
 
 <!-- #/dist -->
