@@ -9,7 +9,11 @@
         <div class="flex-auto pl-6 pt-6">
           <div class="flex items-center justify-center">
             <div>
-              <img class="h-9 w-9 rounded-full" src="" alt="User's picture" />
+              <img
+                class="h-9 w-9 rounded-full"
+                src="@/assets/logo.png"
+                alt="User's picture"
+              />
             </div>
           </div>
 
